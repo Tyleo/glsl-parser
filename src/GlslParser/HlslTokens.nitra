@@ -1,0 +1,331 @@
+﻿namespace GlslParser
+{
+  syntax module HlslTokens
+  {
+    using StandardSpanClasses;
+    using Whitespaces;
+
+    using HlslRegexes;
+
+    // Regular Tokens
+    token CONST                  = "const";
+    token BOOL                   = "bool";
+    token FLOAT                  = "float";
+    token DOUBLE                 = "double";
+    token INT                    = "int";
+    token UINT                   = "uint";
+
+    token BREAK                  = "break";
+    token CONTINUE               = "continue";
+    token DO                     = "do";
+    token ELSE                   = "else";
+    token FOR                    = "for";
+    token IF                     = "if";
+    token DISCARD                = "discard";
+    token RETURN                 = "return";
+    token SWITCH                 = "switch";
+    token CASE                   = "case";
+    token DEFAULT                = "default";
+    token SUBROUTINE             = "subroutine";
+
+    token BVEC2                  = "bvec2";
+    token BVEC3                  = "bvec3";
+    token BVEC4                  = "bvec4";
+    token IVEC2                  = "ivec2";
+    token IVEC3                  = "ivec3";
+    token IVEC4                  = "ivec4";
+    token UVEC2                  = "uvec2";
+    token UVEC3                  = "uvec3";
+    token UVEC4                  = "uvec4";
+    token VEC2                   = "vec2";
+    token VEC3                   = "vec3";
+    token VEC4                   = "vec4";
+
+    token MAT2                   = "mat2";
+    token MAT3                   = "mat3";
+    token MAT4                   = "mat4";
+    token CENTROID               = "centroid";
+    token IN                     = "in";
+    token OUT                    = "out";
+    token INOUT                  = "inout";
+
+    token UNIFORM                = "uniform";
+    token PATCH                  = "patch";
+    token SAMPLE                 = "sample";
+    token BUFFER                 = "buffer";
+    token SHARED                 = "shared";
+
+    token COHERENT               = "coherent";
+    token VOLATILE               = "volatile";
+    token RESTRICT               = "restrict";
+    token READONLY               = "readonly";
+    token WRITEONLY              = "writeonly";
+
+    token DVEC2                  = "dvec2";
+    token DVEC3                  = "dvec3";
+    token DVEC4                  = "dvec4";
+    token DMAT2                  = "dmat2";
+    token DMAT3                  = "dmat3";
+    token DMAT4                  = "dmat4";
+
+
+    token NOPERSPECTIVE          = "noperspective";
+    token FLAT                   = "flat";
+    token SMOOTH                 = "smooth";
+    token LAYOUT                 = "layout";
+    
+    token MAT2X2                 = "mat2x2";
+    token MAT2X3                 = "mat2x3";
+    token MAT2X4                 = "mat2x4";
+
+    token MAT3X2                 = "mat3x2";
+    token MAT3X3                 = "mat3x3";
+    token MAT3X4                 = "mat3x4";
+
+    token MAT4X2                 = "mat4x2";
+    token MAT4X3                 = "mat4x3";
+    token MAT4X4                 = "mat4x4";
+
+    token DMAT2X2                = "dmat2x2";
+    token DMAT2X3                = "dmat2x3";
+    token DMAT2X4                = "dmat2x4";
+
+    token DMAT3X2                = "dmat3x2";
+    token DMAT3X3                = "dmat3x3";
+    token DMAT3X4                = "dmat3x4";
+
+    token DMAT4X2                = "dmat4x2";
+    token DMAT4X3                = "dmat4x3";
+    token DMAT4X4                = "dmat4x4";
+
+    token ATOMIC_UINT            = "atomic_uint";
+
+    token SAMPLER1D              = "sampler1D";
+    token SAMPLER2D              = "sampler2D";
+    token SAMPLER3D              = "sampler3D";
+    token SAMPLERCUBE            = "samplerCube";
+    token SAMPLER1DSHADOW        = "sampler1DShadow";
+    token SAMPLER2DSHADOW        = "sampler2DShadow";
+
+    token SAMPLERCUBESHADOW      = "samplerCubeShadow";
+    token SAMPLER1DARRAY         = "sampler1DArray";
+    token SAMPLER2DARRAY         = "sampler2DArray";
+    token SAMPLER1DARRAYSHADOW   = "sampler1DArrayShadow";
+
+    token SAMPLER2DARRAYSHADOW   = "sampler2DArrayShadow";
+    token ISAMPLER1D             = "isampler1D";
+    token ISAMPLER2D             = "isampler2D";
+    token ISAMPLER3D             = "isampler3D";
+    token ISAMPLERCUBE           = "isamplerCube";
+
+    token ISAMPLER1DARRAY        = "isampler1DArray";
+    token ISAMPLER2DARRAY        = "isampler2DArray";
+    token USAMPLER1D             = "usampler1D";
+    token USAMPLER2D             = "usampler2D";
+    token USAMPLER3D             = "usampler3D";
+
+    token USAMPLERCUBE           = "usamplerCube";
+    token USAMPLER1DARRAY        = "usampler1DArray";
+    token USAMPLER2DARRAY        = "usampler2DArray";
+
+    token SAMPLER2DRECT          = "sampler2DRect";
+    token SAMPLER2DRECTSHADOW    = "sampler2DRectShadow";
+    token ISAMPLER2DRECT         = "isampler2DRect";
+    token USAMPLER2DRECT         = "usampler2DRect";
+
+    token SAMPLERBUFFER          = "samplerBuffer";
+    token ISAMPLERBUFFER         = "isamplerBuffer";
+    token USAMPLERBUFFER         = "usamplerBuffer";
+
+    token SAMPLERCUBEARRAY       = "samplerCubeArray";
+    token SAMPLERCUBEARRAYSHADOW = "samplerCubeArrayShadow";
+
+    token ISAMPLERCUBEARRAY      = "isamplerCubeArray";
+    token USAMPLERCUBEARRAY      = "usamplerCubeArray";
+
+    token SAMPLER2DMS            = "sampler2DMS";
+    token ISAMPLER2DMS           = "isampler2DMS";
+    token USAMPLER2DMS           = "usampler2DMS";
+
+    token SAMPLER2DMSARRAY       = "sampler2DMSArray";
+    token ISAMPLER2DMSARRAY      = "isampler2DMSArray";
+    token USAMPLER2DMSARRAY      = "usampler2DMSArray";
+
+    token IMAGE1D                = "image1D";
+    token IIMAGE1D               = "iimage1D";
+    token UIMAGE1D               = "uimage1D";
+    token IMAGE2D                = "image2D";
+    token IIMAGE2D               = "iimage2D";
+
+    token UIMAGE2D               = "uimage2D";
+    token IMAGE3D                = "image3D";
+    token IIMAGE3D               = "iimage3D";
+    token UIMAGE3D               = "uimage3D";
+
+    token IMAGE2DRECT            = "image2DRect";
+    token IIMAGE2DRECT           = "iimage2DRect";
+    token UIMAGE2DRECT           = "uimage2DRect";
+
+    token IMAGECUBE              = "imageCube";
+    token IIMAGECUBE             = "iimageCCube";
+    token UIMAGECUBE             = "uimageCube";
+
+    token IMAGEBUFFER            = "imageBuffer";
+    token IIMAGEBUFFER           = "iimageBuffer";
+    token UIMAGEBUFFER           = "uimageBuffer";
+
+    token IMAGE1DARRAY           = "image1DArray";
+    token IIMAGE1DARRAY          = "iimage1DArray";
+    token UIMAGE1DARRAY          = "uimage1DArray";
+
+    token IMAGE2DARRAY           = "image2DArray";
+    token IIMAGE2DARRAY          = "iimage2DArray";
+    token UIMAGE2DARRAY          = "uimage2DArray";
+
+    token IMAGECUBEARRAY         = "imageCubeArray";
+    token IIMAGECUBEARRAY        = "iimageCubeArray";
+    token UIMAGECUBEARRAY        = "uimageCubeArray";
+
+    token IMAGE2DMS              = "image2DMS";
+    token IIMAGE2DMS             = "iimage2DMS";
+    token UIMAGE2DMS             = "uimage2DMS";
+
+    token IMAGE2DMSARRAY         = "image2DMSArray";
+    token IIMAGE2DMSARRAY        = "iimage2DMSArray";
+    token UIMAGE2DMSARRAY        = "uimage2DMSArray";
+
+
+    token STRUCT                 = "struct";
+    token VOID                   = "void";
+    token WHILE                  = "while";
+
+    [Identifier]
+    token IDENTIFIER             = IDENTIFIER_REGEX;
+    token TYPE_NAME              = TYPE_NAME_REGEX;
+
+    token FLOATCONSTANT          = FLOATCONSTANT_REGEX;
+    token DOUBLECONSTANT         = DOUBLECONSTANT_REGEX;
+    token INTCONSTANT            = INTCONSTANT_REGEX;
+    token UINTCONSTANT           = UINTCONSTANT_REGEX;
+    token BOOLCONSTANT           = BOOLCONSTANT_REGEX;
+
+    token FIELD_SELECTION        = ".";
+
+    token LEFT_OP                = "<<";
+    token RIGHT_OP               = ">>";
+
+    token INC_OP                 = "++";
+    token DEC_OP                 = "--";
+    token LE_OP                  = "<=";
+    token GE_OP                  = ">=";
+    token EQ_OP                  = "==";
+    token NE_OP                  = "!=";
+
+    token AND_OP                 = "&&";
+    token OR_OP                  = "||";
+    token XOR_OP                 = "^^";
+    token MUL_ASSIGN             = "*=";
+    token DIV_ASSIGN             = "/=";
+    token ADD_ASSIGN             = "+=";
+
+    token MOD_ASSIGN             = "%=";
+    token LEFT_ASSIGN            = "<<=";
+    token RIGHT_ASSIGN           = ">>=";
+    token AND_ASSIGN             = "&=";
+    token XOR_ASSIGN             = "^=";
+    token OR_ASSIGN              = "|=";
+
+    token SUB_ASSIGN             = "-=";
+
+
+    token LEFT_PAREN             = "(";
+    token RIGHT_PAREN            = ")";
+    token LEFT_BRACKET           = "[";
+    token RIGHT_BRACKET          = "]";
+    token LEFT_BRACE             = "{";
+    token RIGHT_BRACE            = "}";
+
+    token COMMA                  = ",";
+    token COLON                  = ":";
+    token EQUAL                  = "=";
+    token SEMICOLON              = ";";
+    token BANG                   = "!";
+    token DASH                   = "-";
+    token TILDE                  = "~";
+    token PLUS                   = "+";
+    token STAR                   = "*";
+    token SLASH                  = "/";
+    token PERCENT                = "%";
+
+    token LEFT_ANGLE             = "<";
+    token RIGHT_ANGLE            = ">";
+    token VERTICLE_BAR           = "|";
+    token CARET                  = "^";
+    token AMPERSAND              = "&";
+    token QUESTION               = "?";
+
+
+    token INVARIANT              = "invariant";
+    token PRECISE                = "precise";
+
+    token HIGH_PRECISION         = "highp";
+    token MEDIUM_PRECISION       = "mediump";
+    token LOW_PRECISION          = "lowp";
+    token PRECISION              = "precision";
+
+    // Unused Tokens
+    token COMMON                 = "common";
+    token PARTITION              = "partition";
+    token ACTIVE                 = "active";
+
+    token ASM                    = "asm";
+
+    token CLASS                  = "class";
+    token UNION                  = "union";
+    token ENUM                   = "enum";
+    token TYPEDEF                = "typedef";
+    token TEMPLATE               = "template";
+    token THIS                   = "this";
+
+    token RESOURCE               = "resource";
+
+    token GOTO                   = "goto";
+
+    token INLINE                 = "inline";
+    token NOINLINE               = "noinline";
+    token PUBLIC                 = "public";
+    token STATIC                 = "static";
+    token EXTERN                 = "extern";
+    token EXTERNAL               = "external";
+    token INTERFACE              = "interface";
+
+    token LONG                   = "long";
+    token SHORT                  = "short";
+    token HALF                   = "half";
+    token FIXED                  = "fixed";
+    token UNSIGNED               = "unsigned";
+    token SUPER_PRECISION        = "superp";
+
+    token INPUT                  = "input";
+    token OUTPUT                 = "output";
+
+    token HVEC2                  = "hvec2";
+    token HVEC3                  = "hvec3";
+    token HVEC4                  = "hvec4";
+    token FVEC2                  = "fvec2";
+    token FVEC3                  = "fvec3";
+    token FVEC4                  = "fvec4";
+
+    token SAMPLER3DRECT          = "sampler3DRect";
+
+    token FILTER                 = "filter";
+
+    token SIZEOF                 = "sizeof";
+    token CAST                   = "cast";
+
+    token NAMESPACE              = "namespace";
+    token USING                  = "using";
+
+    // Macros
+  }
+}

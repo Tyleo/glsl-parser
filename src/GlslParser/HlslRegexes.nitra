@@ -1,0 +1,34 @@
+﻿namespace GlslParser
+{
+  syntax module HlslRegexes
+  {
+    regex LOWERCASE_LETTER       = ['a' .. 'z'];
+    regex UPPERCASE_LETTER       = ['A' .. 'Z'];
+    regex DECIMAL_DIGIT          = ['0' .. '9'];
+    regex NONZERO_DECIMAL_DIGIT  = ['1' .. '9'];
+    regex OCTAL_DIGIT            = ['0' .. '8'];
+    regex HEX_DIGIT              = ['0' .. '9'] |
+                                   ['a' .. 'f'] |
+                                   ['A' .. 'F'];
+    regex FRACTION               = DECIMAL_NUMBER? '.' DECIMAL_NUMBER |
+                                   DECIMAL_NUMBER '.' DECIMAL_NUMBER?;
+    regex EXPONENT               = ('e' | 'E') ('+' | '-') DECIMAL_NUMBER;
+    regex NONDIGIT               = ('_' |
+                                    LOWERCASE_LETTER |
+                                    UPPERCASE_LETTER);
+    regex DECIMAL_NUMBER         = DECIMAL_DIGIT+;
+    regex PROPER_DECIMAL_NUMBER  = NONZERO_DECIMAL_DIGIT+ DECIMAL_DIGIT*;
+    regex OCTAL_NUMBER           = '0' OCTAL_DIGIT*;
+    regex HEX_NUMBER             = ("0x" | "0X") HEX_DIGIT+;
+    regex FLOAT_NUMBER           = FRACTION EXPONENT?;
+    regex IDENTIFIER_REGEX       = NONDIGIT (NONDIGIT | DECIMAL_DIGIT)*;
+    regex TYPE_NAME_REGEX        = IDENTIFIER_REGEX;
+    regex FLOATCONSTANT_REGEX    = FLOAT_NUMBER ('f' | 'F')?;
+    regex DOUBLECONSTANT_REGEX   = FLOAT_NUMBER ("lf" | "LF");
+    regex INTCONSTANT_REGEX      = PROPER_DECIMAL_NUMBER |
+                                   OCTAL_NUMBER |
+                                   HEX_NUMBER;
+    regex UINTCONSTANT_REGEX     = INTCONSTANT_REGEX ('u' | 'U');
+    regex BOOLCONSTANT_REGEX     = "true" | "false";
+  }
+}
