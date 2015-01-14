@@ -8,351 +8,502 @@
     using HlslRegexes;
 
     // Regular Tokens
+    [Keyword]
     [SpanClass(Keyword)]
     token CONST                  = "const";
+    [Keyword]
     [SpanClass(Keyword)]
     token BOOL                   = "bool";
+    [Keyword]
     [SpanClass(Keyword)]
     token FLOAT                  = "float";
+    [Keyword]
     [SpanClass(Keyword)]
     token DOUBLE                 = "double";
+    [Keyword]
     [SpanClass(Keyword)]
     token INT                    = "int";
+    [Keyword]
     [SpanClass(Keyword)]
     token UINT                   = "uint";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token BREAK                  = "break";
+    [Keyword]
     [SpanClass(Keyword)]
     token CONTINUE               = "continue";
+    [Keyword]
     [SpanClass(Keyword)]
     token DO                     = "do";
+    [Keyword]
     [SpanClass(Keyword)]
     token ELSE                   = "else";
+    [Keyword]
     [SpanClass(Keyword)]
     token FOR                    = "for";
+    [Keyword]
     [SpanClass(Keyword)]
     token IF                     = "if";
+    [Keyword]
     [SpanClass(Keyword)]
     token DISCARD                = "discard";
+    [Keyword]
     [SpanClass(Keyword)]
     token RETURN                 = "return";
+    [Keyword]
     [SpanClass(Keyword)]
     token SWITCH                 = "switch";
+    [Keyword]
     [SpanClass(Keyword)]
     token CASE                   = "case";
+    [Keyword]
     [SpanClass(Keyword)]
     token DEFAULT                = "default";
+    [Keyword]
     [SpanClass(Keyword)]
     token SUBROUTINE             = "subroutine";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token BVEC2                  = "bvec2";
+    [Keyword]
     [SpanClass(Keyword)]
     token BVEC3                  = "bvec3";
+    [Keyword]
     [SpanClass(Keyword)]
     token BVEC4                  = "bvec4";
+    [Keyword]
     [SpanClass(Keyword)]
     token IVEC2                  = "ivec2";
+    [Keyword]
     [SpanClass(Keyword)]
     token IVEC3                  = "ivec3";
+    [Keyword]
     [SpanClass(Keyword)]
     token IVEC4                  = "ivec4";
+    [Keyword]
     [SpanClass(Keyword)]
     token UVEC2                  = "uvec2";
+    [Keyword]
     [SpanClass(Keyword)]
     token UVEC3                  = "uvec3";
+    [Keyword]
     [SpanClass(Keyword)]
     token UVEC4                  = "uvec4";
+    [Keyword]
     [SpanClass(Keyword)]
     token VEC2                   = "vec2";
+    [Keyword]
     [SpanClass(Keyword)]
     token VEC3                   = "vec3";
+    [Keyword]
     [SpanClass(Keyword)]
     token VEC4                   = "vec4";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token MAT2                   = "mat2";
+    [Keyword]
     [SpanClass(Keyword)]
     token MAT3                   = "mat3";
+    [Keyword]
     [SpanClass(Keyword)]
     token MAT4                   = "mat4";
+    [Keyword]
     [SpanClass(Keyword)]
     token CENTROID               = "centroid";
+    [Keyword]
     [SpanClass(Keyword)]
     token IN                     = "in";
+    [Keyword]
     [SpanClass(Keyword)]
     token OUT                    = "out";
+    [Keyword]
     [SpanClass(Keyword)]
     token INOUT                  = "inout";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token UNIFORM                = "uniform";
+    [Keyword]
     [SpanClass(Keyword)]
     token PATCH                  = "patch";
+    [Keyword]
     [SpanClass(Keyword)]
     token SAMPLE                 = "sample";
+    [Keyword]
     [SpanClass(Keyword)]
     token BUFFER                 = "buffer";
+    [Keyword]
     [SpanClass(Keyword)]
     token SHARED                 = "shared";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token COHERENT               = "coherent";
+    [Keyword]
     [SpanClass(Keyword)]
     token VOLATILE               = "volatile";
+    [Keyword]
     [SpanClass(Keyword)]
     token RESTRICT               = "restrict";
+    [Keyword]
     [SpanClass(Keyword)]
     token READONLY               = "readonly";
+    [Keyword]
     [SpanClass(Keyword)]
     token WRITEONLY              = "writeonly";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token DVEC2                  = "dvec2";
+    [Keyword]
     [SpanClass(Keyword)]
     token DVEC3                  = "dvec3";
+    [Keyword]
     [SpanClass(Keyword)]
     token DVEC4                  = "dvec4";
+    [Keyword]
     [SpanClass(Keyword)]
     token DMAT2                  = "dmat2";
+    [Keyword]
     [SpanClass(Keyword)]
     token DMAT3                  = "dmat3";
+    [Keyword]
     [SpanClass(Keyword)]
     token DMAT4                  = "dmat4";
 
 
+    [Keyword][Keyword]
     [SpanClass(Keyword)]
     token NOPERSPECTIVE          = "noperspective";
+    [Keyword]
     [SpanClass(Keyword)]
     token FLAT                   = "flat";
+    [Keyword]
     [SpanClass(Keyword)]
     token SMOOTH                 = "smooth";
+    [Keyword]
     [SpanClass(Keyword)]
     token LAYOUT                 = "layout";
-    
+
+    [Keyword]
     [SpanClass(Keyword)]
     token MAT2X2                 = "mat2x2";
+    [Keyword]
     [SpanClass(Keyword)]
     token MAT2X3                 = "mat2x3";
+    [Keyword]
     [SpanClass(Keyword)]
     token MAT2X4                 = "mat2x4";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token MAT3X2                 = "mat3x2";
+    [Keyword]
     [SpanClass(Keyword)]
     token MAT3X3                 = "mat3x3";
+    [Keyword]
     [SpanClass(Keyword)]
     token MAT3X4                 = "mat3x4";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token MAT4X2                 = "mat4x2";
+    [Keyword]
     [SpanClass(Keyword)]
     token MAT4X3                 = "mat4x3";
+    [Keyword]
     [SpanClass(Keyword)]
     token MAT4X4                 = "mat4x4";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token DMAT2X2                = "dmat2x2";
+    [Keyword]
     [SpanClass(Keyword)]
     token DMAT2X3                = "dmat2x3";
+    [Keyword]
     [SpanClass(Keyword)]
     token DMAT2X4                = "dmat2x4";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token DMAT3X2                = "dmat3x2";
+    [Keyword]
     [SpanClass(Keyword)]
     token DMAT3X3                = "dmat3x3";
+    [Keyword]
     [SpanClass(Keyword)]
     token DMAT3X4                = "dmat3x4";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token DMAT4X2                = "dmat4x2";
+    [Keyword]
     [SpanClass(Keyword)]
     token DMAT4X3                = "dmat4x3";
+    [Keyword]
     [SpanClass(Keyword)]
     token DMAT4X4                = "dmat4x4";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token ATOMIC_UINT            = "atomic_uint";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token SAMPLER1D              = "sampler1D";
+    [Keyword]
     [SpanClass(Keyword)]
     token SAMPLER2D              = "sampler2D";
+    [Keyword]
     [SpanClass(Keyword)]
     token SAMPLER3D              = "sampler3D";
+    [Keyword]
     [SpanClass(Keyword)]
     token SAMPLERCUBE            = "samplerCube";
+    [Keyword]
     [SpanClass(Keyword)]
     token SAMPLER1DSHADOW        = "sampler1DShadow";
+    [Keyword]
     [SpanClass(Keyword)]
     token SAMPLER2DSHADOW        = "sampler2DShadow";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token SAMPLERCUBESHADOW      = "samplerCubeShadow";
+    [Keyword]
     [SpanClass(Keyword)]
     token SAMPLER1DARRAY         = "sampler1DArray";
+    [Keyword]
     [SpanClass(Keyword)]
     token SAMPLER2DARRAY         = "sampler2DArray";
+    [Keyword]
     [SpanClass(Keyword)]
     token SAMPLER1DARRAYSHADOW   = "sampler1DArrayShadow";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token SAMPLER2DARRAYSHADOW   = "sampler2DArrayShadow";
+    [Keyword]
     [SpanClass(Keyword)]
     token ISAMPLER1D             = "isampler1D";
+    [Keyword]
     [SpanClass(Keyword)]
     token ISAMPLER2D             = "isampler2D";
+    [Keyword]
     [SpanClass(Keyword)]
     token ISAMPLER3D             = "isampler3D";
+    [Keyword]
     [SpanClass(Keyword)]
     token ISAMPLERCUBE           = "isamplerCube";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token ISAMPLER1DARRAY        = "isampler1DArray";
+    [Keyword]
     [SpanClass(Keyword)]
     token ISAMPLER2DARRAY        = "isampler2DArray";
+    [Keyword]
     [SpanClass(Keyword)]
     token USAMPLER1D             = "usampler1D";
+    [Keyword]
     [SpanClass(Keyword)]
     token USAMPLER2D             = "usampler2D";
+    [Keyword]
     [SpanClass(Keyword)]
     token USAMPLER3D             = "usampler3D";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token USAMPLERCUBE           = "usamplerCube";
+    [Keyword]
     [SpanClass(Keyword)]
     token USAMPLER1DARRAY        = "usampler1DArray";
+    [Keyword]
     [SpanClass(Keyword)]
     token USAMPLER2DARRAY        = "usampler2DArray";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token SAMPLER2DRECT          = "sampler2DRect";
+    [Keyword]
     [SpanClass(Keyword)]
     token SAMPLER2DRECTSHADOW    = "sampler2DRectShadow";
+    [Keyword]
     [SpanClass(Keyword)]
     token ISAMPLER2DRECT         = "isampler2DRect";
+    [Keyword]
     [SpanClass(Keyword)]
     token USAMPLER2DRECT         = "usampler2DRect";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token SAMPLERBUFFER          = "samplerBuffer";
+    [Keyword]
     [SpanClass(Keyword)]
     token ISAMPLERBUFFER         = "isamplerBuffer";
+    [Keyword]
     [SpanClass(Keyword)]
     token USAMPLERBUFFER         = "usamplerBuffer";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token SAMPLERCUBEARRAY       = "samplerCubeArray";
+    [Keyword]
     [SpanClass(Keyword)]
     token SAMPLERCUBEARRAYSHADOW = "samplerCubeArrayShadow";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token ISAMPLERCUBEARRAY      = "isamplerCubeArray";
+    [Keyword]
     [SpanClass(Keyword)]
     token USAMPLERCUBEARRAY      = "usamplerCubeArray";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token SAMPLER2DMS            = "sampler2DMS";
+    [Keyword]
     [SpanClass(Keyword)]
     token ISAMPLER2DMS           = "isampler2DMS";
+    [Keyword]
     [SpanClass(Keyword)]
     token USAMPLER2DMS           = "usampler2DMS";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token SAMPLER2DMSARRAY       = "sampler2DMSArray";
+    [Keyword]
     [SpanClass(Keyword)]
     token ISAMPLER2DMSARRAY      = "isampler2DMSArray";
+    [Keyword]
     [SpanClass(Keyword)]
     token USAMPLER2DMSARRAY      = "usampler2DMSArray";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token IMAGE1D                = "image1D";
+    [Keyword]
     [SpanClass(Keyword)]
     token IIMAGE1D               = "iimage1D";
+    [Keyword]
     [SpanClass(Keyword)]
     token UIMAGE1D               = "uimage1D";
+    [Keyword]
     [SpanClass(Keyword)]
     token IMAGE2D                = "image2D";
+    [Keyword]
     [SpanClass(Keyword)]
     token IIMAGE2D               = "iimage2D";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token UIMAGE2D               = "uimage2D";
+    [Keyword]
     [SpanClass(Keyword)]
     token IMAGE3D                = "image3D";
+    [Keyword]
     [SpanClass(Keyword)]
     token IIMAGE3D               = "iimage3D";
+    [Keyword]
     [SpanClass(Keyword)]
     token UIMAGE3D               = "uimage3D";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token IMAGE2DRECT            = "image2DRect";
+    [Keyword]
     [SpanClass(Keyword)]
     token IIMAGE2DRECT           = "iimage2DRect";
+    [Keyword]
     [SpanClass(Keyword)]
     token UIMAGE2DRECT           = "uimage2DRect";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token IMAGECUBE              = "imageCube";
+    [Keyword]
     [SpanClass(Keyword)]
-    token IIMAGECUBE             = "iimageCCube";
+    token IIMAGECUBE             = "iimageCube";
+    [Keyword]
     [SpanClass(Keyword)]
     token UIMAGECUBE             = "uimageCube";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token IMAGEBUFFER            = "imageBuffer";
+    [Keyword]
     [SpanClass(Keyword)]
     token IIMAGEBUFFER           = "iimageBuffer";
+    [Keyword]
     [SpanClass(Keyword)]
     token UIMAGEBUFFER           = "uimageBuffer";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token IMAGE1DARRAY           = "image1DArray";
+    [Keyword]
     [SpanClass(Keyword)]
     token IIMAGE1DARRAY          = "iimage1DArray";
+    [Keyword]
     [SpanClass(Keyword)]
     token UIMAGE1DARRAY          = "uimage1DArray";
-
+    [Keyword]
     [SpanClass(Keyword)]
     token IMAGE2DARRAY           = "image2DArray";
+    [Keyword]
     [SpanClass(Keyword)]
     token IIMAGE2DARRAY          = "iimage2DArray";
+    [Keyword]
     [SpanClass(Keyword)]
     token UIMAGE2DARRAY          = "uimage2DArray";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token IMAGECUBEARRAY         = "imageCubeArray";
+    [Keyword]
     [SpanClass(Keyword)]
     token IIMAGECUBEARRAY        = "iimageCubeArray";
+    [Keyword]
     [SpanClass(Keyword)]
     token UIMAGECUBEARRAY        = "uimageCubeArray";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token IMAGE2DMS              = "image2DMS";
+    [Keyword]
     [SpanClass(Keyword)]
     token IIMAGE2DMS             = "iimage2DMS";
+    [Keyword]
     [SpanClass(Keyword)]
     token UIMAGE2DMS             = "uimage2DMS";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token IMAGE2DMSARRAY         = "image2DMSArray";
+    [Keyword]
     [SpanClass(Keyword)]
     token IIMAGE2DMSARRAY        = "iimage2DMSArray";
+    [Keyword]
     [SpanClass(Keyword)]
     token UIMAGE2DMSARRAY        = "uimage2DMSArray";
 
 
+    [Keyword]
     [SpanClass(Keyword)]
     token STRUCT                 = "struct";
+    [Keyword]
     [SpanClass(Keyword)]
     token VOID                   = "void";
+    [Keyword]
     [SpanClass(Keyword)]
     token WHILE                  = "while";
 
     [Identifier]
-    token IDENTIFIER             = IDENTIFIER_REGEX;
+    token IDENTIFIER             = !BOOLCONSTANT_REGEX !KEYWORD_REGEX IDENTIFIER_REGEX;
     [Identifier]
     token TYPE_NAME              = TYPE_NAME_REGEX;
 
@@ -417,7 +568,6 @@
     [SpanClass(Operator)]
     token SUB_ASSIGN             = "-=";
 
-
     [SpanClass(OpenBrace)]
     token LEFT_PAREN             = "(";
     [SpanClass(CloseBrace)]
@@ -467,109 +617,154 @@
     token QUESTION               = "?";
 
 
+    [Keyword]
     [SpanClass(Keyword)]
     token INVARIANT              = "invariant";
+    [Keyword]
     [SpanClass(Keyword)]
     token PRECISE                = "precise";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token HIGH_PRECISION         = "highp";
+    [Keyword]
     [SpanClass(Keyword)]
     token MEDIUM_PRECISION       = "mediump";
+    [Keyword]
     [SpanClass(Keyword)]
     token LOW_PRECISION          = "lowp";
+    [Keyword]
     [SpanClass(Keyword)]
     token PRECISION              = "precision";
 
     // Unused Tokens
+    [Keyword]
     [SpanClass(Keyword)]
     token COMMON                 = "common";
+    [Keyword]
     [SpanClass(Keyword)]
     token PARTITION              = "partition";
+    [Keyword]
     [SpanClass(Keyword)]
     token ACTIVE                 = "active";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token ASM                    = "asm";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token CLASS                  = "class";
+    [Keyword]
     [SpanClass(Keyword)]
     token UNION                  = "union";
+    [Keyword]
     [SpanClass(Keyword)]
     token ENUM                   = "enum";
+    [Keyword]
     [SpanClass(Keyword)]
     token TYPEDEF                = "typedef";
+    [Keyword]
     [SpanClass(Keyword)]
     token TEMPLATE               = "template";
+    [Keyword]
     [SpanClass(Keyword)]
     token THIS                   = "this";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token RESOURCE               = "resource";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token GOTO                   = "goto";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token INLINE                 = "inline";
+    [Keyword]
     [SpanClass(Keyword)]
     token NOINLINE               = "noinline";
+    [Keyword]
     [SpanClass(Keyword)]
     token PUBLIC                 = "public";
+    [Keyword]
     [SpanClass(Keyword)]
     token STATIC                 = "static";
+    [Keyword]
     [SpanClass(Keyword)]
     token EXTERN                 = "extern";
+    [Keyword]
     [SpanClass(Keyword)]
     token EXTERNAL               = "external";
+    [Keyword]
     [SpanClass(Keyword)]
     token INTERFACE              = "interface";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token LONG                   = "long";
+    [Keyword]
     [SpanClass(Keyword)]
     token SHORT                  = "short";
+    [Keyword]
     [SpanClass(Keyword)]
     token HALF                   = "half";
+    [Keyword]
     [SpanClass(Keyword)]
     token FIXED                  = "fixed";
+    [Keyword]
     [SpanClass(Keyword)]
     token UNSIGNED               = "unsigned";
+    [Keyword]
     [SpanClass(Keyword)]
     token SUPER_PRECISION        = "superp";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token INPUT                  = "input";
+    [Keyword]
     [SpanClass(Keyword)]
     token OUTPUT                 = "output";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token HVEC2                  = "hvec2";
+    [Keyword]
     [SpanClass(Keyword)]
     token HVEC3                  = "hvec3";
+    [Keyword]
     [SpanClass(Keyword)]
     token HVEC4                  = "hvec4";
+    [Keyword]
     [SpanClass(Keyword)]
     token FVEC2                  = "fvec2";
+    [Keyword]
     [SpanClass(Keyword)]
     token FVEC3                  = "fvec3";
+    [Keyword]
     [SpanClass(Keyword)]
     token FVEC4                  = "fvec4";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token SAMPLER3DRECT          = "sampler3DRect";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token FILTER                 = "filter";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token SIZEOF                 = "sizeof";
+    [Keyword]
     [SpanClass(Keyword)]
     token CAST                   = "cast";
 
+    [Keyword]
     [SpanClass(Keyword)]
     token NAMESPACE              = "namespace";
+    [Keyword]
     [SpanClass(Keyword)]
     token USING                  = "using";
   }

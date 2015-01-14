@@ -73,6 +73,9 @@
     </MacroReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HlslBraces.nitra">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="HlslGrammar.nitra" />
     <Compile Include="HlslRegexes.nitra">
       <SubType>Code</SubType>

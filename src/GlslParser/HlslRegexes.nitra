@@ -2,33 +2,286 @@
 {
   syntax module HlslRegexes
   {
-    regex LOWERCASE_LETTER       = ['a' .. 'z'];
-    regex UPPERCASE_LETTER       = ['A' .. 'Z'];
-    regex DECIMAL_DIGIT          = ['0' .. '9'];
-    regex NONZERO_DECIMAL_DIGIT  = ['1' .. '9'];
-    regex OCTAL_DIGIT            = ['0' .. '8'];
-    regex HEX_DIGIT              = ['0' .. '9'] |
-                                   ['a' .. 'f'] |
-                                   ['A' .. 'F'];
-    regex FRACTION               = DECIMAL_NUMBER? '.' DECIMAL_NUMBER |
-                                   DECIMAL_NUMBER '.' DECIMAL_NUMBER?;
-    regex EXPONENT               = ('e' | 'E') ('+' | '-') DECIMAL_NUMBER;
-    regex NONDIGIT               = ('_' |
-                                    LOWERCASE_LETTER |
-                                    UPPERCASE_LETTER);
-    regex DECIMAL_NUMBER         = DECIMAL_DIGIT+;
-    regex PROPER_DECIMAL_NUMBER  = NONZERO_DECIMAL_DIGIT+ DECIMAL_DIGIT*;
-    regex OCTAL_NUMBER           = '0' OCTAL_DIGIT*;
-    regex HEX_NUMBER             = ("0x" | "0X") HEX_DIGIT+;
-    regex FLOAT_NUMBER           = FRACTION EXPONENT?;
-    regex IDENTIFIER_REGEX       = NONDIGIT (NONDIGIT | DECIMAL_DIGIT)*;
-    regex TYPE_NAME_REGEX        = IDENTIFIER_REGEX;
-    regex FLOATCONSTANT_REGEX    = FLOAT_NUMBER ('f' | 'F')?;
-    regex DOUBLECONSTANT_REGEX   = FLOAT_NUMBER ("lf" | "LF");
-    regex INTCONSTANT_REGEX      = PROPER_DECIMAL_NUMBER |
-                                   OCTAL_NUMBER |
-                                   HEX_NUMBER;
-    regex UINTCONSTANT_REGEX     = INTCONSTANT_REGEX ('u' | 'U');
-    regex BOOLCONSTANT_REGEX     = "true" | "false";
+    using HlslTokens;
+
+    regex LOWERCASE_LETTER      = ['a' .. 'z'];
+    regex UPPERCASE_LETTER      = ['A' .. 'Z'];
+    regex DECIMAL_DIGIT         = ['0' .. '9'];
+    regex NONZERO_DECIMAL_DIGIT = ['1' .. '9'];
+    regex OCTAL_DIGIT           = ['0' .. '8'];
+    regex HEX_DIGIT             = ['0' .. '9'] |
+                                  ['a' .. 'f'] |
+                                  ['A' .. 'F'];
+    regex FRACTION              = DECIMAL_NUMBER? '.' DECIMAL_NUMBER |
+                                  DECIMAL_NUMBER '.' DECIMAL_NUMBER?;
+    regex EXPONENT              = ('e' | 'E') ('+' | '-') DECIMAL_NUMBER;
+    regex NONDIGIT              = ('_' |
+                                   LOWERCASE_LETTER |
+                                   UPPERCASE_LETTER);
+    regex DECIMAL_NUMBER        = DECIMAL_DIGIT+;
+    regex PROPER_DECIMAL_NUMBER = NONZERO_DECIMAL_DIGIT+ DECIMAL_DIGIT*;
+    regex OCTAL_NUMBER          = '0' OCTAL_DIGIT*;
+    regex HEX_NUMBER            = ("0x" | "0X") HEX_DIGIT+;
+    regex FLOAT_NUMBER          = FRACTION EXPONENT?;
+    regex IDENTIFIER_REGEX      = NONDIGIT (NONDIGIT | DECIMAL_DIGIT)*;
+    regex TYPE_NAME_REGEX       = IDENTIFIER_REGEX;
+    regex FLOATCONSTANT_REGEX   = FLOAT_NUMBER ('f' | 'F')?;
+    regex DOUBLECONSTANT_REGEX  = FLOAT_NUMBER ("lf" | "LF");
+    regex INTCONSTANT_REGEX     = PROPER_DECIMAL_NUMBER |
+                                  OCTAL_NUMBER |
+                                  HEX_NUMBER;
+    regex UINTCONSTANT_REGEX    = INTCONSTANT_REGEX ('u' | 'U');
+    regex BOOLCONSTANT_REGEX    = "true" | "false";
+
+    regex KEYWORD_REGEX         = "const" |
+                                  "bool" |
+                                  "float" |
+                                  "double" |
+                                  "int" |
+                                  "uint" |
+
+                                  "break" |
+                                  "continue" |
+                                  "do" |
+                                  "else" |
+                                  "for" |
+                                  "if" |
+                                  "discard" |
+                                  "return" |
+                                  "switch" |
+                                  "case" |
+                                  "default" |
+                                  "subroutine" |
+
+                                  "bvec2" |
+                                  "bvec3" |
+                                  "bvec4" |
+                                  "ivec2" |
+                                  "ivec3" |
+                                  "ivec4" |
+                                  "uvec2" |
+                                  "uvec3" |
+                                  "uvec4" |
+                                  "vec2" |
+                                  "vec3" |
+                                  "vec4" |
+
+                                  "mat2" |
+                                  "mat3" |
+                                  "mat4" |
+                                  "centroid" |
+                                  "in" |
+                                  "out" |
+                                  "inout" |
+
+                                  "uniform" |
+                                  "patch" |
+                                  "sample" |
+                                  "buffer" |
+                                  "shared" |
+
+                                  "coherent" |
+                                  "volatile" |
+                                  "restrict" |
+                                  "readonly" |
+                                  "writeonly" |
+
+                                  "dvec2" |
+                                  "dvec3" |
+                                  "dvec4" |
+                                  "dmat2" |
+                                  "dmat3" |
+                                  "dmat4" |
+
+
+                                  "noperspective" |
+                                  "flat" |
+                                  "smooth" |
+                                  "layout" |
+
+                                  "mat2x2" |
+                                  "mat2x3" |
+                                  "mat2x4" |
+
+                                  "mat3x2" |
+                                  "mat3x3" |
+                                  "mat3x4" |
+
+                                  "mat4x2" |
+                                  "mat4x3" |
+                                  "mat4x4" |
+
+                                  "dmat2x2" |
+                                  "dmat2x3" |
+                                  "dmat2x4" |
+
+                                  "dmat3x2" |
+                                  "dmat3x3" |
+                                  "dmat3x4" |
+
+                                  "dmat4x2" |
+                                  "dmat4x3" |
+                                  "dmat4x4" |
+
+                                  "atomic_uint" |
+
+                                  "sampler1D" |
+                                  "sampler2D" |
+                                  "sampler3D" |
+                                  "samplerCube" |
+                                  "sampler1DShadow" |
+                                  "sampler2DShadow" |
+
+                                  "samplerCubeShadow" |
+                                  "sampler1DArray" |
+                                  "sampler2DArray" |
+                                  "sampler1DArrayShadow" |
+
+                                  "sampler2DArrayShadow" |
+                                  "isampler1D" |
+                                  "isampler2D" |
+                                  "isampler3D" |
+                                  "isamplerCube" |
+
+                                  "isampler1DArray" |
+                                  "isampler2DArray" |
+                                  "usampler1D" |
+                                  "usampler2D" |
+                                  "usampler3D" |
+
+                                  "usamplerCube" |
+                                  "usampler1DArray" |
+                                  "usampler2DArray" |
+
+                                  "sampler2DRect" |
+                                  "sampler2DRectShadow" |
+                                  "isampler2DRect" |
+                                  "usampler2DRect" |
+
+                                  "samplerBuffer" |
+                                  "isamplerBuffer" |
+                                  "usamplerBuffer" |
+
+                                  "samplerCubeArray" |
+                                  "samplerCubeArrayShadow" |
+
+                                  "isamplerCubeArray" |
+                                  "usamplerCubeArray" |
+
+                                  "sampler2DMS" |
+                                  "isampler2DMS" |
+                                  "usampler2DMS" |
+
+                                  "sampler2DMSArray" |
+                                  "isampler2DMSArray" |
+                                  "usampler2DMSArray" |
+
+                                  "image1D" |
+                                  "iimage1D" |
+                                  "uimage1D" |
+                                  "image2D" |
+                                  "iimage2D" |
+
+                                  "uimage2D" |
+                                  "image3D" |
+                                  "iimage3D" |
+                                  "uimage3D" |
+
+                                  "image2DRect" |
+                                  "iimage2DRect" |
+                                  "uimage2DRect" |
+
+                                  "imageCube" |
+                                  "iimageCube" |
+                                  "uimageCube" |
+
+                                  "imageBuffer" |
+                                  "iimageBuffer" |
+                                  "uimageBuffer" |
+
+                                  "image1DArray" |
+                                  "iimage1DArray" |
+                                  "uimage1DArray" |
+                                  "image2DArray" |
+                                  "iimage2DArray" |
+                                  "uimage2DArray" |
+
+                                  "imageCubeArray" |
+                                  "iimageCubeArray" |
+                                  "uimageCubeArray" |
+
+                                  "image2DMS" |
+                                  "iimage2DMS" |
+                                  "uimage2DMS" |
+
+                                  "image2DMSArray" |
+                                  "iimage2DMSArray" |
+                                  "uimage2DMSArray" |
+
+
+                                  "struct" |
+                                  "void" |
+                                  "while" |
+
+
+                                  "invariant" |
+                                  "precise" |
+
+                                  "highp" |
+                                  "mediump" |
+                                  "lowp" |
+                                  "precision" |
+
+                                  "common" |
+                                  "partition" |
+                                  "active" |
+
+                                  "asm" |
+
+                                  "class" |
+                                  "union" |
+                                  "enum" |
+                                  "typedef" |
+                                  "template" |
+                                  "this" |
+
+                                  "resource" |
+
+                                  "goto" |
+
+                                  "inline" |
+                                  "noinline" |
+                                  "public" |
+                                  "static" |
+                                  "extern" |
+                                  "external" |
+                                  "interface" |
+
+                                  "long" |
+                                  "short" |
+                                  "half" |
+                                  "fixed" |
+                                  "unsigned" |
+                                  "superp" |
+
+                                  "input" |
+                                  "output" |
+
+                                  "hvec2" |
+                                  "hvec3" |
+                                  "hvec4" |
+                                  "fvec2" |
+                                  "fvec3" |
+                                  "fvec4" |
+
+                                  "sampler3DRect" |
+
+                                  "filter" |
+
+                                  "sizeof" |
+                                  "cast" |
+
+                                  "namespace" |
+                                  "using";
   }
 }
