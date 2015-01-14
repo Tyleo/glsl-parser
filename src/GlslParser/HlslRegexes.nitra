@@ -33,7 +33,7 @@
     regex UINTCONSTANT_REGEX    = INTCONSTANT_REGEX ('u' | 'U');
     regex BOOLCONSTANT_REGEX    = "true" | "false";
 
-    regex KEYWORD_REGEX         = "const" |
+    regex KEYWORD_REGEX =         "const" |
                                   "bool" |
                                   "float" |
                                   "double" |

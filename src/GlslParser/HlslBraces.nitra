@@ -1,9 +1,0 @@
-﻿namespace GlslParser
-{
-  syntax module HlslBraces
-  {
-    braces "(", ")";
-    braces "{", "}";
-    braces "[", "]";
-  }
-}
